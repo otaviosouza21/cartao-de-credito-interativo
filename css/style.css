@@ -1,0 +1,232 @@
+.background{
+  background: url("../images/bg-main-desktop.png") no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
+ font-family: 'Space Grotesk',sans-serif;
+ 
+}
+
+.container{
+  margin: 0 auto;
+  display: grid;
+  max-width: 1100px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 100px;
+}
+
+.cards{
+display: flex;
+gap: 30px;
+margin-top: 50px;
+position: relative;
+max-width: 100%;
+flex-direction: column;
+}
+
+.card-front{
+display: grid;
+/* min-width: 100%; */
+}
+
+.card-front img,.card-back img{
+  grid-area: 1/1;
+}
+
+.card-conteudo{
+  grid-area: 1/1;
+  z-index: 9;
+  padding: 30px;
+ color:  hsl(0, 0%, 100%);
+ display: grid;
+ 
+}
+
+.card-conteudo img{
+  margin-bottom: 25px;
+}
+
+.card-conteudo p{
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+}
+
+.card-conteudo span{
+ display: flex;
+ justify-content: space-between;
+ text-transform: uppercase;
+}
+
+
+.card-back{
+  display: grid;
+  align-items: center;
+  position: relative;
+  left: 60px;
+
+}
+
+.card-back span{
+  padding-left: 300px;
+}
+
+.formulario{
+ display: grid;
+ grid-template-columns: 100px 100px auto;
+ gap: 25px;
+}
+
+.formulario label{
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+}
+
+.formulario input{
+  outline: none;
+  border: solid 1px #dedddf;
+  border-radius: 6px;
+  padding: 10px;
+font-family: 'Space Grotesk',sans-serif;
+}
+
+.formulario input:focus{
+  border: solid 1px hsl(279, 6%, 55%)
+}
+
+.formulario input::placeholder{
+  color: #c6c6c6;;
+}
+
+
+.form-name,.form-number,button{
+  display: flex;
+  flex-direction: column;
+  grid-column:  1/-1;
+}
+
+.form-date{
+grid-column: 1/3;
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.form-date input{
+ max-width: 80px;
+}
+
+.form-date label{
+  grid-column: 1/-1;
+}
+
+.form-cvc{
+  grid-column: 3;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+button{
+  font-family: 'Space Grotesk',sans-serif; ;
+  color: #fff;
+  background-color: hsl(278, 68%, 11%);
+  display: flex;
+  border-radius: 6px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover{
+  background-color:hsl(278, 67%, 18%); 
+  transition: ease-in-out 0.5s ;
+}
+
+.obrigado{
+  display: flex;
+  flex-direction: column;
+ justify-self: center;
+ text-align: center;
+ display: none;
+}
+
+.obrigado img{
+  width: 80px;
+ align-self: center;
+}
+
+.obrigado button{
+width: 100%;
+margin-top: 50px;
+}
+
+
+.card-front-dados{
+display: flex;
+}
+
+@media(max-width:1030px){
+
+  .formulario{
+    color: #fff;
+    margin-bottom: 30px;
+  }
+.background{
+  transform: rotate(90deg);
+  background-size: cover;
+  
+}
+ button{
+  background-color: rgb(92, 35, 146);
+ }
+
+ .cards{
+  flex-direction: row-reverse;
+  gap: 0;;
+  position: relative;
+ }
+
+ .card-front{
+  z-index: 10;
+  position: absolute;
+  top: 100px;
+  left: -100px;
+ }
+
+  .container{
+    grid-template-columns: 1fr;
+    gap: 120px;
+  }
+}
+
+@media(max-width:727px){
+  .background{
+    background-image: url("../images/bg-main-mobile.png");
+    background-size: 100vh 50vw;
+    transform: none;
+  }
+  .formulario{
+    color: black;
+  }
+
+}
+
+.accept{
+  background-color: rgb(166, 239, 166);
+}
+.remove{
+  background-color: rgb(213, 97, 97);
+}
